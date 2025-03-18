@@ -20,6 +20,16 @@ long int somatoriaRecursiva(int x, int y) {
     return 0;
 }
 
+long int produtoRecursivo(int x, int y) {
+    if (x <= y) {
+        long int produto = x;
+        long int resultado = produtoRecursivo(x + 1, y);
+        printf("Resultado: %ld\n", resultado);
+        return produto * resultado;
+    }
+    return 1;
+}
+
 int main(void) {
     printf("\n\n ::::::::   INICIO DO PROGRAMA  :::::::: \n\n");
     printf("Digite o valor de x: ");
@@ -28,5 +38,7 @@ int main(void) {
     scanf("%d", &y);
 
     printf("\nA somatória é %ld\n", somatoriaRecursiva(x, y));
+    printf("\nO produto é %ld\n", produtoRecursivo(x, y));
+    printf("\n\n ::::::::   FIM DO PROGRAMA  :::::::: \n\n");
     return 0;
 }
